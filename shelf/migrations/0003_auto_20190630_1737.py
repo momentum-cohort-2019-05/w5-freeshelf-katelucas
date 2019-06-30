@@ -3,28 +3,7 @@
 from django.db import migrations
 
 def load_booklist(apps, schema_editor):
-    Book = apps.get_model('shelf', 'Book')
-    Category = apps.get_model('shelf', 'Category')
-    
-    # Card.objects.all().delete()
-    # Stack.objects.all().delete()
-    category = Category(name="Fiction")
-    category.save()
-    filename = os.path.join(settings.BASE_DIR, 'sample_books.csv')
-    with open(filename) as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            book = Book(title=row['title'], author=row['author'], description=row['description'], url=row['url'],category=category)
-            book.save()
-# def delete_data(apps, schema_editor):
-#     Stack = apps.get_model('core', 'Stack')
-#     Card = apps.get_model('core', 'Card')
-#     Card.objects.all().delete()
-#     Stack.objects.all().delete()
-#     ]    
-    def get_absolute_url(self):
-        return reverse('book-detail', args=[str(self.id)])
-
+    pass
 class Migration(migrations.Migration):
 
     dependencies = [
